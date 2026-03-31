@@ -1,15 +1,13 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 <title>Leorix MC Store</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-<!-- ✅ TEBEX SCRIPT ADDED -->
 <script src="https://checkout.tebex.io/api/checkout.js"></script>
 
 <style>
-/* (ALL YOUR CSS SAME — NOT CHANGED) */
 *{margin:0;padding:0;box-sizing:border-box}
 
 :root{
@@ -137,19 +135,16 @@ button{
 
 <div id="profile" onclick="openLogin()">👤 Login</div>
 
-<!-- LOGIN -->
 <div id="loginBox" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:black;padding:20px;">
 <input id="ign" placeholder="Enter IGN">
 <button onclick="login()">Login</button>
 </div>
 
-<!-- MAIN -->
 <div id="main" class="section active">
   <div class="card" onclick="show('survival')">Survival</div>
   <div class="card" onclick="show('about')">About</div>
 </div>
 
-<!-- SURVIVAL -->
 <div id="survival" class="section">
 <button onclick="show('main')">⬅ Back</button>
 
@@ -158,7 +153,6 @@ button{
 <div class="card" onclick="show('tags')">Tags</div>
 </div>
 
-<!-- TAGS -->
 <div id="tags" class="section">
 <button onclick="show('survival')">⬅ Back</button>
 
@@ -168,12 +162,9 @@ button{
 <div class="rank-box"><img class="rank-img" src="deadly.png"><h3>☠ Deadly Tag</h3><p>500 Coins</p></div>
 </div>
 
-<!-- ✅ TAG MESSAGE ADDED -->
 <p style="margin-top:20px;opacity:0.8;">Tags can be bought from in-game store</p>
-
 </div>
 
-<!-- RANKS -->
 <div id="ranks" class="section">
 <button onclick="show('survival')">⬅ Back</button>
 
@@ -181,16 +172,15 @@ button{
 
 <div class="rank-box prime">
 <img class="rank-img" src="prime.png">
-<h3>PRIME - ₹149</h3>
+<h3>PRIME - ₹119</h3>
 <div class="perks">✔ /sit<br> ✔ /ec<br> ✔ /pv 1<br> ✔ /home 3</div>
 <img class="kit-img" src="prime-kit.png">
-<!-- ✅ TEBEX -->
 <button onclick="buyNow('7353461')">Buy</button>
 </div>
 
 <div class="rank-box leorix">
 <img class="rank-img" src="leorixplus.png">
-<h3>LEORIX+ - ₹299</h3>
+<h3>LEORIX+ - ₹499</h3>
 <div class="perks">✔ /pv 1<br> ✔ /ec<br> ✔ /craft<br> ✔ /home 7</div>
 <img class="kit-img" src="leorixplus-kit.png">
 <button onclick="buyNow('7353463')">Buy</button>
@@ -198,7 +188,7 @@ button{
 
 <div class="rank-box mythic">
 <img class="rank-img" src="mythic.png">
-<h3>MYTHIC - ₹499</h3>
+<h3>MYTHIC - ₹269</h3>
 <div class="perks">✔ /sit<br> ✔ /ec<br> ✔ /pv 1<br> ✔ /home 5</div>
 <img class="kit-img" src="mythic-kit.png">
 <button onclick="buyNow('7353462')">Buy</button>
@@ -207,34 +197,57 @@ button{
 </div>
 </div>
 
-<!-- COINS -->
+<!-- ✅ UPDATED COINS -->
 <div id="coinshop" class="section">
 <button onclick="show('survival')">⬅ Back</button>
 
 <div class="coin-container">
 
 <div class="coin">
-<img src="100coins.png">
-<h3>100 Coins</h3>
+<img src="400coins.png">
+<h3>400 Coins</h3>
+<p>₹99</p>
 <button onclick="buyNow('7353461')">Buy</button>
 </div>
 
 <div class="coin">
-<img src="1000coins.png">
-<h2>1000 Coins</h2>
+<img src="850coins.png">
+<h3>850 Coins</h3>
+<p>₹199</p>
+<button onclick="buyNow('7353462')">Buy</button>
+</div>
+
+<div class="coin">
+<img src="1300coins.png">
+<h3>1300 Coins</h3>
+<p>₹299</p>
 <button onclick="buyNow('7353463')">Buy</button>
 </div>
 
 <div class="coin">
-<img src="500coins.png">
-<h3>500 Coins</h3>
+<img src="1800coins.png">
+<h3>1800 Coins</h3>
+<p>₹399</p>
+<button onclick="buyNow('7353461')">Buy</button>
+</div>
+
+<div class="coin">
+<img src="2500coins.png">
+<h3>2500 Coins</h3>
+<p>₹499</p>
 <button onclick="buyNow('7353462')">Buy</button>
 </div>
 
+<div class="coin">
+<img src="6000coins.png">
+<h3>6000 Coins</h3>
+<p>₹1000</p>
+<button onclick="buyNow('7353463')">Buy</button>
+</div>
+
 </div>
 </div>
 
-<!-- ABOUT -->
 <div id="about" class="section">
 <button onclick="show('main')">⬅ Back</button>
 <h2>Leorix MC Server</h2>
@@ -246,7 +259,6 @@ button{
 
 <script>
 let user=null;
-let cart=[];
 
 function show(id){
 document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
@@ -262,7 +274,6 @@ document.getElementById("profile").innerText="👤 "+user;
 document.getElementById("loginBox").style.display="none";
 }
 
-/* ✅ TEBEX FUNCTION */
 function buyNow(id){
   Tebex.checkout.open({ ident: id });
 }
